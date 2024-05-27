@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class CoffeeShop1 {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Welcome to Coffee Shop!");
+    System.out.println("Please choose an option:");
+    System.out.println("1. Show menu");
+    System.out.println("2. Place an order");
+    System.out.println("3. Exit");
+
+    int choice = scanner.nextInt();
+
+    switch (choice) {
+      case 1:
+        showMenu();
+        break;
+      case 2:
+        placeOrder();
+        break;
+      case 3:
+        System.out.println("Thank you for visiting Coffee Shop. Have a great day!");
+        break;
+      default:
+        System.out.println("Invalid option. Please choose again.");
+        break;
+    }
+  }
+
+  private static void showMenu() {
+    System.out.println("--- Menu ---");
+    System.out.println("1. CHAI - RS 10.00");
+    System.out.println("2. COFFEE -RS 15.00");
+    System.out.println("3. MASALA CHAI - RS 15.00");
+    System.out.println("4. CAPPUCCHINO - RS 20.00");
+  }
+
+  private static void placeOrder() {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("--- Place an Order ---");
+    System.out.println("Please choose a drink:");
+    System.out.println("1. CHAI - RS 10.00");
+    System.out.println("2. COFFEE - RS 15.00");
+    System.out.println("3. MASALA CHAI - RS 15.00");
+    System.out.println("4. CAPPUCCHINO - RS 20.00");
+
+    int drinkChoice = scanner.nextInt();
+    double price = 0.0;
+    switch (drinkChoice) {
+      case 1:
+        price = 10.00;
+        break;
+      case 2:
+        price = 15.00;
+        break;
+      case 3:
+        price = 15.00;
+        break;
+      case 4:
+        price = 20.00;
+        break;
+      default:
+        System.out.println("Invalid option. Please choose again.");
+        break;
+    }
+
+    System.out.println("Please enter the number of drinks:");
+    int quantity = scanner.nextInt();
+
+    double total = price * quantity;
+    System.out.println("Your total is RS" + total);
+  }
+} 
